@@ -8,14 +8,19 @@
         <h1>Talking Chat</h1>
     </header>
     <nav>
-        <a href="#">Home</a>
-        <a href="#">About</a>
-        <a href="#">Services</a>
-        <a href="#">Contact</a>
+        <a class="index-link" href="#">Home</a>
+        <a class="about-link" href="#">About</a>
+        <a class="contact-link" href="#">Contact</a>
     </nav>
     <main>
-        <h2>Main Content Goes Here</h2>
-        <p>This is where you can add your main content such as text, images, videos, etc.</p>
+        <h2>What's your nickname?</h2>
+        <form class="nickname-form" method="POST">
+            {% csrf_token %}
+            {% for field in form %}
+                {{ field }} <br>
+            {% endfor %}
+            <input class="lets-go-btn" type="submit" value="Let's go!">
+        </form>
     </main>
 
 {% endblock content %}
