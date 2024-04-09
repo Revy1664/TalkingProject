@@ -4,6 +4,14 @@
 
 {% block content %}
 
-    <h1>Talk here, {{ nickname }}</h1>
+    <div style="margin: 20px;">
+        <h1>Talk here, {{ nickname }}</h1>
+        <textarea id="chat-log" cols="100" rows="20"></textarea><br>
+        <input id="chat-message-input" type="text" placeholder="message" size="100">
+        <input id="chat-message-submit" type="button" value="Send">
+    </div>
+
+    <script src="{% static 'js/connectWebsocket.js' %}"></script>
     
+
 {% endblock content %}
