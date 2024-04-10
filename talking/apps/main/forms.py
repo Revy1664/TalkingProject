@@ -7,3 +7,8 @@ class NicknameForm(forms.Form):
             initial="Stranger",
             widget=forms.TextInput(attrs={"placeholder": "nickname"}),
         )
+    room_name = forms.CharField(
+        max_length=30,
+        initial="General",
+        widget=forms.TextInput(attrs={"placeholder": "room name"})
+    )
